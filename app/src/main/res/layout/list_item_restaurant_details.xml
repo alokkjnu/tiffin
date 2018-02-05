@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_event"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="@dimen/margin_16"
+        android:layout_marginRight="@dimen/margin_16"
+        android:layout_marginTop="4dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_icon"
+                android:layout_width="@dimen/nearby_restaurants_list_icon_size"
+                android:layout_height="@dimen/nearby_restaurants_list_icon_size"
+                android:layout_marginBottom="@dimen/margin_16"
+                android:layout_marginLeft="@dimen/margin_16"
+                android:layout_marginRight="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_16"
+                android:src="@drawable/img_ad_1" />
+
+            <TextView
+                android:drawablePadding="@dimen/margin_8"
+                android:drawableLeft="@drawable/ic_veg"
+                android:id="@+id/tv_name"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_12"
+                android:layout_toRightOf="@id/iv_icon"
+                android:lines="1"
+                android:singleLine="true"
+                android:text="Loreum ipsum"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="@dimen/text_size_xs"
+                android:layout_toLeftOf="@id/iv_cart"/>
+
+            <TextView
+                android:id="@+id/tv_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_name"
+                android:layout_marginRight="@dimen/margin_16"
+                android:layout_marginTop="2dp"
+                android:layout_toRightOf="@id/iv_icon"
+                android:lines="2"
+                android:text="Loreum ipsum Loreum ipsum Loreum ipsum Loreum ipsum Loreum ipsum Loreum ipsum"
+                android:textColor="@color/colorSecondaryText"
+                android:layout_toLeftOf="@id/iv_cart"
+                android:textSize="@dimen/text_size_xxs" />
+
+            <TextView
+                android:layout_toLeftOf="@id/iv_cart"
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_description"
+                android:layout_marginRight="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_toRightOf="@id/iv_icon"
+                android:lines="1"
+                android:text="200 INR"
+                android:textColor="@color/colorRedText"
+                android:textSize="@dimen/text_size_xxs" />
+
+            <ImageView
+                android:id="@+id/iv_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_add_to_cart_grey"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/margin_16"
+                />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

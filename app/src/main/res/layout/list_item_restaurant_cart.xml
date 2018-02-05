@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_marginBottom="@dimen/margin_4"
+    android:background="@color/colorWhite"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="@dimen/cart_list_icon_size"
+        android:layout_height="@dimen/cart_list_icon_size"
+        android:layout_marginBottom="@dimen/margin_16"
+        android:layout_marginLeft="@dimen/margin_16"
+        android:layout_marginRight="@dimen/margin_16"
+        android:layout_marginTop="@dimen/margin_16"
+        android:src="@drawable/img_ad_1" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margin_16"
+        android:layout_marginTop="@dimen/margin_16"
+        android:layout_toRightOf="@id/iv_icon"
+        android:lines="1"
+        android:singleLine="true"
+        android:text="Loreum ipsum"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="@dimen/text_size_s" />
+
+    <TextView
+        android:id="@+id/tv_min_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_name"
+        android:layout_marginRight="@dimen/margin_16"
+        android:layout_marginTop="@dimen/margin_4"
+        android:layout_toRightOf="@id/iv_icon"
+        android:lines="1"
+        android:singleLine="true"
+        android:text="Min order 2000"
+        android:textColor="@color/colorSecondaryText"
+        android:textSize="@dimen/text_size_xxs" />
+
+
+    <TextView
+        android:id="@+id/tv_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_min_order"
+        android:layout_marginRight="@dimen/margin_8"
+        android:layout_marginTop="@dimen/margin_4"
+        android:layout_toRightOf="@id/iv_icon"
+        android:drawableLeft="@drawable/ic_star_grey_12"
+        android:drawablePadding="@dimen/margin_4"
+        android:lines="1"
+        android:singleLine="true"
+        android:text="3.6"
+        android:textColor="@color/colorSecondaryText"
+        android:textSize="@dimen/text_size_xxs" />
+
+    <View
+        android:layout_marginTop="@dimen/margin_8"
+        android:id="@+id/divider1"
+        android:layout_below="@id/tv_rating"
+        android:layout_marginRight="@dimen/margin_16"
+        android:layout_marginLeft="@dimen/margin_16"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorBg"
+        />
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/ll_order"
+        android:layout_marginTop="@dimen/margin_8"
+        android:layout_below="@id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></LinearLayout>
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_below="@id/ll_order"
+        android:layout_marginRight="@dimen/margin_16"
+        android:layout_marginLeft="@dimen/margin_16"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorBg"
+        />
+
+    <TextView
+        android:layout_marginTop="@dimen/margin_8"
+        android:layout_marginRight="@dimen/margin_16"
+        android:layout_marginBottom="@dimen/margin_16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_s"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/colorPrimaryText"
+        android:layout_below="@id/ll_order"
+        android:text="Total        200"
+        />
+
+</RelativeLayout>

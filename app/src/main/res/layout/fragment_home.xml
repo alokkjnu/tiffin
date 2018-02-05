@@ -1,0 +1,124 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBg"
+    tools:context="tif.eurekalabs.com.fragment.HomeFragment">
+
+
+    <RelativeLayout
+        android:id="@+id/location_holder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:paddingBottom="@dimen/margin_8"
+        android:paddingLeft="@dimen/margin_8"
+        android:paddingRight="@dimen/margin_16"
+        android:paddingTop="@dimen/margin_8">
+
+        <ImageView
+            android:id="@+id/iv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/margin_8"
+            android:src="@drawable/ic_location_white" />
+
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/tv_credits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingBottom="@dimen/margin_8"
+            android:paddingLeft="@dimen/margin_16"
+            android:paddingRight="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_8"
+            android:text="200"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_size" />
+
+        <TextView
+            android:id="@+id/tv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="@dimen/margin_8"
+            android:layout_toLeftOf="@id/tv_credits"
+            android:layout_toRightOf="@id/iv_location"
+            android:drawablePadding="@dimen/margin_8"
+            android:text="Location"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_size"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_sub_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_location"
+            android:layout_marginRight="@dimen/margin_8"
+            android:layout_toLeftOf="@id/tv_credits"
+            android:layout_toRightOf="@id/iv_location"
+            android:lines="1"
+            android:singleLine="true"
+            android:text="Nagpur"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_size_s" />
+    </RelativeLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/location_holder">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/tv_thought"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_16"
+                android:fontFamily="sans-serif"
+                android:textStyle="bold"
+                android:text="Dinning in? We've got opyions for you."
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="@dimen/text_size_s" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_banner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/banner_size"
+                android:layout_below="@id/tv_thought">
+
+            </android.support.v7.widget.RecyclerView>
+
+            <TextView
+                android:id="@+id/tv_nearby"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rv_banner"
+                android:layout_marginLeft="@dimen/margin_16"
+                android:layout_marginRight="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_24"
+                android:layout_marginBottom="@dimen/margin_8"
+                android:fontFamily="sans-serif"
+                android:text="Nearby tiffin centers"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="@dimen/text_size_xs" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_resturants"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/tv_nearby">
+
+            </android.support.v7.widget.RecyclerView>
+        </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</RelativeLayout>

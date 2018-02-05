@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBg"
+    tools:context="tif.eurekalabs.com.AddAddressActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:visibility="visible"
+        app:elevation="2dp"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="Add Address"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/text_size_l"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/et_area"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_marginLeft="@dimen/margin_24"
+        android:layout_marginRight="@dimen/margin_24"
+        android:layout_marginTop="@dimen/margin_24"
+        android:background="@color/colorWhite"
+        android:clickable="false"
+        android:drawablePadding="@dimen/margin_16"
+        android:focusable="false"
+        android:hint="Location"
+        android:lines="1"
+        android:maxLines="1"
+        android:padding="12dp"
+        android:singleLine="true"
+        android:textColor="@color/colorEditText"
+        android:textSize="@dimen/text_size_s"
+        android:theme="@style/AppThemeBlack.EditText" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_marginLeft="@dimen/margin_24"
+        android:layout_marginRight="@dimen/margin_24"
+        android:layout_marginTop="@dimen/margin_24"
+        android:layout_below="@id/et_area"
+        android:text="Delivery Address"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="@dimen/text_size_s"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/et_address"
+        android:focusable="true"
+        android:focusedByDefault="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_title"
+        android:layout_marginLeft="@dimen/margin_24"
+        android:layout_marginRight="@dimen/margin_24"
+        android:layout_marginTop="@dimen/margin_16"
+        android:background="@color/colorWhite"
+        android:drawablePadding="@dimen/margin_16"
+        android:hint="House/Flat No. "
+        android:padding="12dp"
+        android:textColor="@color/colorEditText"
+        android:textSize="@dimen/text_size_s"
+        android:theme="@style/AppThemeBlack.EditText" />
+
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/et_information"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_address"
+        android:layout_marginLeft="@dimen/margin_24"
+        android:layout_marginRight="@dimen/margin_24"
+        android:layout_marginTop="@dimen/margin_16"
+        android:background="@color/colorWhite"
+        android:drawablePadding="@dimen/margin_16"
+        android:gravity="top"
+        android:hint="Landmarks"
+        android:lines="1"
+        android:maxLines="1"
+        android:padding="12dp"
+        android:textColor="@color/colorEditText"
+        android:textSize="@dimen/text_size_s"
+        android:theme="@style/AppThemeBlack.EditText" />
+
+    <RelativeLayout
+        android:id="@+id/rl_save_as"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_information"
+        android:layout_marginLeft="@dimen/margin_24"
+        android:layout_marginRight="@dimen/margin_24"
+        android:layout_marginTop="@dimen/margin_16"
+        android:background="@color/colorWhite"
+        android:paddingBottom="@dimen/margin_16">
+
+        <TextView
+            android:id="@+id/tv_save_as"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_12"
+            android:text="Save as"
+            android:textColor="@color/colorSecondaryText"
+            android:textSize="@dimen/text_size_s" />
+
+        <TextView
+            android:id="@+id/tv_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_save_as"
+            android:layout_marginLeft="@dimen/margin_24"
+            android:layout_marginTop="@dimen/margin_4"
+            android:background="@drawable/border_add_name_normal"
+            android:paddingTop="@dimen/margin_4"
+            android:paddingBottom="@dimen/margin_4"
+            android:paddingLeft="@dimen/margin_8"
+            android:paddingRight="@dimen/margin_8"
+            android:text="Home"
+            android:textColor="@color/colorSecondaryText"
+            android:textSize="@dimen/text_size_s" />
+
+        <TextView
+            android:id="@+id/tv_office"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tv_home"
+            android:layout_below="@id/tv_save_as"
+            android:layout_marginLeft="@dimen/margin_24"
+            android:layout_marginTop="@dimen/margin_4"
+            android:background="@drawable/border_add_name_normal"
+            android:paddingTop="@dimen/margin_4"
+            android:paddingBottom="@dimen/margin_4"
+            android:paddingLeft="@dimen/margin_8"
+            android:paddingRight="@dimen/margin_8"
+            android:text="Office"
+            android:textColor="@color/colorSecondaryText"
+            android:textSize="@dimen/text_size_s" />
+
+        <TextView
+            android:id="@+id/tv_others"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_save_as"
+            android:layout_marginLeft="@dimen/margin_24"
+            android:layout_marginTop="@dimen/margin_4"
+            android:background="@drawable/border_add_name_selected"
+            android:paddingTop="@dimen/margin_4"
+            android:paddingBottom="@dimen/margin_4"
+            android:paddingLeft="@dimen/margin_8"
+            android:paddingRight="@dimen/margin_8"
+            android:text="Others"
+            android:layout_toRightOf="@id/tv_office"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_size_s" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/et_others"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_save_as"
+        android:layout_marginLeft="@dimen/margin_24"
+        android:layout_marginRight="@dimen/margin_24"
+        android:layout_marginTop="@dimen/margin_16"
+        android:background="@color/colorWhite"
+        android:drawablePadding="@dimen/margin_16"
+        android:hint="e.g. Dad's home"
+        android:padding="12dp"
+        android:textColor="@color/colorEditText"
+        android:textSize="@dimen/text_size_s"
+        android:theme="@style/AppThemeBlack.EditText" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_submit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:text="Save"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/text_size" />
+
+</RelativeLayout>

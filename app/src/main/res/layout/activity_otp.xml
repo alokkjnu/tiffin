@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBg"
+    tools:context="tif.eurekalabs.com.OTPActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:visibility="visible"
+        android:elevation="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Verify Number"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_size_l" />
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorSecondaryText"
+        android:gravity="center_horizontal"
+        android:text="OTP has been sent to your mobile number."
+        android:layout_below="@id/toolbar"
+        android:textSize="@dimen/text_size"
+        android:layout_marginTop="@dimen/margin_56"
+        android:layout_marginLeft="@dimen/margin_24"
+        android:layout_marginRight="@dimen/margin_24"
+        />
+
+    <TextView
+        android:layout_marginBottom="@dimen/margin_48"
+        android:id="@+id/tv_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryText"
+        android:gravity="center_horizontal"
+        android:text="+91 9806773242"
+        android:layout_below="@id/tv_title"
+        android:textSize="@dimen/text_size_l"
+        android:layout_marginTop="@dimen/margin_16"
+        android:layout_marginLeft="@dimen/margin_24"
+        android:layout_marginRight="@dimen/margin_24"
+        />
+
+    <android.support.v7.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:id="@+id/btn_verify"
+        android:text="Submit"
+        android:textSize="@dimen/text_size"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:background="@color/colorPrimary"
+        android:layout_height="@dimen/button_height"
+        android:layout_alignParentBottom="true"
+        />
+
+    <com.alimuzaffar.lib.pin.PinEntryEditText
+        android:maxLines="1"
+        android:singleLine="true"
+        android:background="@null"
+        app:pinCharacterSpacing="8dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/margin_40"
+        android:layout_marginRight="@dimen/margin_40"
+        android:layout_marginTop="@dimen/margin_56"
+        android:layout_below="@id/tv_number"
+        android:id="@+id/et_otp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:cursorVisible="false"
+        android:digits="1234567890"
+        android:inputType="number"
+        android:maxLength="6"
+        android:textColor="@color/colorPrimary"
+        android:textIsSelectable="false"
+        android:textSize="@dimen/text_size"
+        app:pinAnimationType="fromBottom"
+        app:pinBackgroundDrawable="@drawable/bg_otp_et"
+        />
+
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:id="@+id/tv_resend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorSecondaryText"
+        android:gravity="center_horizontal"
+        android:text="Resend OTP"
+        android:layout_below="@id/et_otp"
+        android:textSize="@dimen/text_size_s"
+        android:padding="@dimen/margin_8"
+        android:layout_marginTop="@dimen/margin_8"
+        android:layout_marginLeft="@dimen/margin_24"
+        android:layout_marginRight="@dimen/margin_24"
+        />
+
+</RelativeLayout>

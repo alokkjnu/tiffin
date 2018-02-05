@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_event"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="@dimen/margin_8"
+        android:layout_marginRight="@dimen/margin_8"
+        android:layout_marginTop="4dp"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:background="@color/colorWhite"
+            android:paddingLeft="@dimen/margin_16"
+            android:paddingRight="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_marginRight="@dimen/margin_16"
+                android:src="@drawable/ic_location_grey"
+                android:id="@+id/iv_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_toRightOf="@id/iv_location"
+                android:id="@id/tv_title"
+                android:textSize="@dimen/text_size_s"
+                android:textColor="@color/colorSecondaryText"
+                android:text="Work"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                />
+
+            <TextView
+                android:layout_toRightOf="@id/iv_location"
+                android:id="@+id/address"
+                android:layout_below="@id/tv_title"
+                android:layout_marginTop="@dimen/margin_4"
+                android:textSize="@dimen/text_size_xs"
+                android:textColor="@color/colorSecondaryText"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+            <TextView
+                android:padding="@dimen/margin_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8"
+                android:text="Edit"
+                android:textColor="@color/colorPrimary"
+                android:textAllCaps="false"
+                android:textSize="@dimen/text_size_s"
+                android:layout_below="@id/address"
+                android:id="@+id/btn_edit"
+                android:layout_toLeftOf="@id/btn_delete"
+                android:background="@color/colorWhite"
+                />
+
+            <TextView
+                android:layout_alignParentRight="true"
+                android:id="@+id/btn_delete"
+                android:layout_marginLeft="@dimen/margin_16"
+                android:padding="@dimen/margin_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8"
+                android:text="Delete"
+                android:textColor="@color/colorPrimaryText"
+                android:textAllCaps="false"
+                android:textSize="@dimen/text_size_s"
+                android:layout_below="@id/address"
+                android:background="@color/colorWhite"
+                />
+
+            <View
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_below="@id/btn_delete"
+                android:layout_toRightOf="@id/iv_location"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorBg"
+                />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

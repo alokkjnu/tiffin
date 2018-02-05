@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Tiffin</string>
+
+    <string name="facebook_app_id">197519264323237</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

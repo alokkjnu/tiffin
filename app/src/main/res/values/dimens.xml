@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="margin_4">4dp</dimen>
+    <dimen name="margin_8">8dp</dimen>
+    <dimen name="margin_12">12dp</dimen>
+    <dimen name="margin_16">16dp</dimen>
+    <dimen name="margin_24">24dp</dimen>
+    <dimen name="margin_32">32dp</dimen>
+    <dimen name="margin_40">40dp</dimen>
+    <dimen name="margin_48">48dp</dimen>
+    <dimen name="margin_56">56dp</dimen>
+
+    <dimen name="text_size_xxs">10dp</dimen>
+    <dimen name="text_size_xs">12dp</dimen>
+    <dimen name="text_size_s">14dp</dimen>
+    <dimen name="text_size">16dp</dimen>
+    <dimen name="text_size_l">18dp</dimen>
+    <dimen name="text_size_xl">20dp</dimen>
+    <dimen name="text_size_xxl">22dp</dimen>
+    <dimen name="text_size_xxxl">26dp</dimen>
+
+    <dimen name="splash_screen_logo_size">128dp</dimen>
+    <dimen name="login_screen_logo_size">64dp</dimen>
+    <dimen name="nearby_restaurants_list_icon_size">64dp</dimen>
+    <dimen name="cart_list_icon_size">48dp</dimen>
+
+    <dimen name="button_height">48dp</dimen>
+    <dimen name="profile_size">96dp</dimen>
+    <dimen name="profile_icon_bg_size">64dp</dimen>
+
+    <dimen name="banner_size">196dp</dimen>
+</resources>
