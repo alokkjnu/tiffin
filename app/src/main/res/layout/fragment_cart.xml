@@ -138,7 +138,7 @@
                 android:paddingLeft="@dimen/margin_16"
                 android:paddingRight="@dimen/margin_16"
                 android:paddingTop="@dimen/margin_16"
-                android:text="Combine Bill"
+                android:text="Bill"
                 android:textColor="@color/colorPrimaryText"
                 android:textSize="@dimen/text_size_s" />
 

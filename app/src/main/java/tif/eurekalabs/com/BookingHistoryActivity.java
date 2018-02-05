@@ -4,6 +4,7 @@ import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -12,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tif.eurekalabs.com.adapter.AddressBookListItemAdapter;
+import tif.eurekalabs.com.adapter.OrderListItemAdapter;
 
 public class BookingHistoryActivity extends AppCompatActivity {
 
@@ -21,13 +23,13 @@ public class BookingHistoryActivity extends AppCompatActivity {
 
     List<Drawable> bannerList = new ArrayList<>();
 
-    AddressBookListItemAdapter adapter;
+    OrderListItemAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking_history);
 
-        rvAddress=(RecyclerView) findViewById(R.id.rv_address);
+        rvAddress=(RecyclerView) findViewById(R.id.rv_order);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
 
@@ -49,6 +51,11 @@ public class BookingHistoryActivity extends AppCompatActivity {
         bannerList.add(ContextCompat.getDrawable(this,R.drawable.img_ad_1));
         bannerList.add(ContextCompat.getDrawable(this,R.drawable.img_ad_1));
         bannerList.add(ContextCompat.getDrawable(this,R.drawable.img_ad_1));
+
+        adapter = new OrderListItemAdapter(bannerList,this);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
+        rvAddress.setLayoutManager(mLayoutManager);
+        rvAddress.setAdapter(adapter);
 
     }
 }

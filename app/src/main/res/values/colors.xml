@@ -10,6 +10,7 @@
     <color name="colorDialogBg">#BDBDBD</color>
     <color name="colorCVSecondaryBg">#EEEEEE</color>
     <color name="colorBlueGrey">#00BCD4</color>
+    <color name="colorOrange">#FF8A65</color>
 
     <color name="colorEditText">#616161</color>
     <color name="colorBottomMenuText">#616161</color>

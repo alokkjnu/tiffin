@@ -18,38 +18,29 @@ import tif.eurekalabs.com.R;
  * Created by coderap on 4/4/2017.
  */
 
-public class PackageDetailsListItemAdapter extends RecyclerView.Adapter<PackageDetailsListItemAdapter.MyViewHolder> {
+public class OrderListItemAdapter extends RecyclerView.Adapter<OrderListItemAdapter.MyViewHolder> {
 
     public List<Drawable> list;
 
     RelativeLayout parent;
 
-    static String TAG = "PackageDetailsListItemAdapter";
+    static String TAG = "OrderListItemAdapter";
 
     Context context;
 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tvDay;
-        TextView tvDescription;
-
-//        ExpandableLinearLayout expandableLinearLayout;
 
         public MyViewHolder(View view) {
             super(view);
-
-            tvDay = (TextView) view.findViewById(R.id.tv_day);
-            tvDescription = (TextView) view.findViewById(R.id.tv_description);
-
-            //          expandableLinearLayout=(ExpandableLinearLayout) view.findViewById(R.id.expandableLayout);
 
 
         }
     }
 
 
-    public PackageDetailsListItemAdapter(List<Drawable> feedsList, Context c) {
+    public OrderListItemAdapter(List<Drawable> feedsList, Context c) {
         this.list = feedsList;
         context = c;
     }
@@ -57,36 +48,14 @@ public class PackageDetailsListItemAdapter extends RecyclerView.Adapter<PackageD
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.list_item_package_details, parent, false);
+                .inflate(R.layout.list_item_order, parent, false);
 
         return new MyViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
-        /*holder.expandableLinearLayout.setInRecyclerView(true);
-        holder.expandableLinearLayout.setListener(new ExpandableLayoutListenerAdapter() {
-            @Override
-            public void onPreOpen() {
-               *//* createRotateAnimator(holder.buttonLayout, 0f, 180f).start();
-                expandState.put(position, true);*//*
-               holder.tvDay.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.ic_up_black,0);
-            }
 
-            @Override
-            public void onPreClose() {
-              *//*  createRotateAnimator(holder.buttonLayout, 180f, 0f).start();
-                expandState.put(position, false);*//*
-                holder.tvDay.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.ic_down_black,0);
-            }
-        });
-
-        holder.tvDay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(final View v) {
-               holder.expandableLinearLayout.toggle();
-            }
-        });*/
 
     }
 

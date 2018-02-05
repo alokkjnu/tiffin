@@ -24,6 +24,7 @@
     <dimen name="login_screen_logo_size">64dp</dimen>
     <dimen name="nearby_restaurants_list_icon_size">64dp</dimen>
     <dimen name="cart_list_icon_size">48dp</dimen>
+    <dimen name="drawer_icon_size">24dp</dimen>
 
     <dimen name="button_height">48dp</dimen>
     <dimen name="profile_size">96dp</dimen>
