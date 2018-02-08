@@ -21,7 +21,7 @@
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
 
-        <activity android:name=".MainActivity" >
+        <activity android:name=".MainActivity">
         </activity>
         <activity android:name=".SplashActivity" />
         <activity android:name=".LoginActivity" />
@@ -40,23 +40,22 @@
         <activity android:name=".OTPActivity" />
         <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".EnterPasswordActivity" />
-        <activity android:name=".BookingHistoryActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".AddressBookActivity"></activity>
-        <activity android:name=".AddAddressActivity">
-        </activity>
-        <activity android:name=".ProfileActivity"
-            android:windowSoftInputMode="stateHidden|adjustNothing">
-
-        </activity>
-
+        <activity android:name=".BookingHistoryActivity"></activity>
+        <activity android:name=".AddressBookActivity" />
+        <activity android:name=".AddAddressActivity"></activity>
+        <activity
+            android:name=".ProfileActivity"
+            android:windowSoftInputMode="stateHidden|adjustNothing"></activity>
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
+        <activity android:name=".OrderSummaryActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

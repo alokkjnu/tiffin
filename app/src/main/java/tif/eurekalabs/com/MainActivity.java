@@ -5,9 +5,12 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -40,6 +43,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private DrawerLayout mDrawerLayout;
     private ListView lvDrawer;
 
+    RelativeLayout rlDrawer;
+
+    ActionBarDrawerToggle mDrawerToggle;
+
+    Toolbar toolbar;
+
     String TAG = "MainActivity";
 
     @Override
@@ -49,25 +58,40 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mNavigationDrawerItemTitles= getResources().getStringArray(R.array.navigation_drawer_items_array);
 
+        rlDrawer=(RelativeLayout) findViewById(R.id.left_drawer);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+
         lvDrawer = (ListView) findViewById(R.id.lv_drawer);
 
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
 
-        DrawerItem[] drawerItem = new DrawerItem[3];
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
-        drawerItem[0] = new DrawerItem(R.drawable.ic_home_dark_grey, "Home");
-        drawerItem[1] = new DrawerItem(R.drawable.ic_cart_dark_grey, "Cart");
-        drawerItem[2] = new DrawerItem(R.drawable.ic_profile_dark_grey, "Orders");
+        toolbar.setTitle("Home");
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         getSupportActionBar().setHomeButtonEnabled(true);
+
+        DrawerItem[] drawerItem = new DrawerItem[7];
+        drawerItem[0] = new DrawerItem(R.drawable.ic_home_white, "Home");
+        drawerItem[1] = new DrawerItem(R.drawable.ic_cart_white, "Cart");
+        drawerItem[2] = new DrawerItem(R.drawable.ic_orders_white, "Orders");
+        drawerItem[3] = new DrawerItem(R.drawable.ic_address_book_white, "Address Book");
+        drawerItem[4] = new DrawerItem(R.drawable.ic_offers_white, "Offers");
+        drawerItem[5] = new DrawerItem(R.drawable.ic_contact_us_white, "Contact Us");
+        drawerItem[6] = new DrawerItem(R.drawable.ic_help_white, "Help");
 
         DrawerListItemAdapter adapter = new DrawerListItemAdapter(this, R.layout.list_item_drawer_menu, drawerItem);
         lvDrawer.setAdapter(adapter);
         lvDrawer.setOnItemClickListener(new DrawerItemClickListener());
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
+        mDrawerToggle = new android.support.v7.app.ActionBarDrawerToggle(this,mDrawerLayout,toolbar,R.string.app_name, R.string.app_name);
 
+        mDrawerToggle.syncState();
+
+        selectItem(0);
 
       /*  llHome= (LinearLayout) findViewById(R.id.ll_home);
        // llSearch = (LinearLayout) findViewById(R.id.ll_explore);
@@ -135,6 +159,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case 1:
                 fragment = new CartFragment();
                 break;
+            case 2:
+                fragment = new CartFragment();
+                break;
             default:
                 break;
         }
@@ -146,7 +173,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             lvDrawer.setItemChecked(position, true);
             lvDrawer.setSelection(position);
             setTitle(mNavigationDrawerItemTitles[position]);
-            mDrawerLayout.closeDrawer(lvDrawer); } else {
+            mDrawerLayout.closeDrawer(rlDrawer); } else {
         }
     }
 
@@ -167,5 +194,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 viewPager.setCurrentItem(2);
                 break;*/
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if (mDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void setTitle(CharSequence title) {
+        getSupportActionBar().setTitle(title);
+    }
+
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        mDrawerToggle.syncState();
     }
 }

@@ -145,6 +145,7 @@
     <orderEntry type="library" name="com.android.support:palette-v7-25.2.0" level="project" />
     <orderEntry type="library" name="com.android.support:support-media-compat-27.0.2" level="project" />
     <orderEntry type="library" name="com.google.firebase:firebase-auth-11.8.0" level="project" />
+    <orderEntry type="library" name="com.shuhart.stepview:stepview-1.2.3" level="project" />
     <orderEntry type="library" name="com.google.firebase:firebase-analytics-impl-11.8.0" level="project" />
     <orderEntry type="library" name="com.android.support:support-v4-27.0.2" level="project" />
     <orderEntry type="library" name="com.android.support:appcompat-v7-27.0.2" level="project" />

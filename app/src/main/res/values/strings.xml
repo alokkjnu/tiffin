@@ -8,6 +8,17 @@
     <string-array name="navigation_drawer_items_array">
         <item>Home</item>
         <item>Cart</item>
-        <item>Table</item>
+        <item>Orders</item>
+        <item>Address Book</item>
+        <item>Offers</item>
+        <item>Contact Us</item>
+        <item>Help</item>
+    </string-array>
+
+    <string-array name="steps_array">
+        <item>Placed</item>
+        <item>Confirmed</item>
+        <item>Enroute</item>
+        <item>Delivered</item>
     </string-array>
 </resources>

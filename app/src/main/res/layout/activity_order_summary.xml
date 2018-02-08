@@ -1,38 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBg"
-    tools:context="tif.eurekalabs.com.fragment.CartFragment">
+    tools:context="tif.eurekalabs.com.OrderSummaryActivity">
 
-
-    <RelativeLayout
+    <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="?attr/actionBarSize"
         android:background="@color/colorPrimary"
-        android:paddingBottom="@dimen/margin_8"
-        android:paddingLeft="@dimen/margin_8"
-        android:paddingRight="@dimen/margin_16"
-        android:paddingTop="@dimen/margin_8"
-        android:visibility="gone">
+        android:visibility="visible"
+        app:elevation="2dp"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/tv_location"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:drawablePadding="@dimen/margin_8"
-            android:text="Cart"
-            android:textColor="@color/colorWhite"
-            android:textSize="@dimen/text_size"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="Order Summary"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/text_size_l"
+                android:textStyle="bold" />
 
-
-    </RelativeLayout>
-
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -47,7 +47,9 @@
 
 
             <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/rl_cart"
+
+                android:id="@+id/rl_restaurant"
+                android:padding="@dimen/margin_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/margin_4"
@@ -57,19 +59,14 @@
                     android:id="@+id/iv_icon"
                     android:layout_width="@dimen/cart_list_icon_size"
                     android:layout_height="@dimen/cart_list_icon_size"
-                    android:layout_marginBottom="@dimen/margin_16"
-                    android:layout_marginLeft="@dimen/margin_16"
                     android:layout_marginRight="@dimen/margin_16"
-                    android:layout_marginTop="@dimen/margin_16"
                     android:src="@drawable/img_ad_1" />
 
                 <TextView
                     android:id="@+id/tv_restaurant_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/margin_16"
-                    android:layout_marginTop="@dimen/margin_16"
-                    android:layout_toRightOf="@id/iv_icon"
+                   android:layout_toRightOf="@id/iv_icon"
                     android:lines="1"
                     android:singleLine="true"
                     android:text="Loreum ipsum"
@@ -81,7 +78,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tv_restaurant_name"
-                    android:layout_marginRight="@dimen/margin_16"
                     android:layout_marginTop="@dimen/margin_4"
                     android:layout_toRightOf="@id/iv_icon"
                     android:lines="1"
@@ -107,38 +103,179 @@
                     android:textColor="@color/colorSecondaryText"
                     android:textSize="@dimen/text_size_xxs" />
 
-                <View
-                    android:id="@+id/divider1"
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_below="@id/tv_rating"
-                    android:layout_marginLeft="@dimen/margin_16"
-                    android:layout_marginRight="@dimen/margin_16"
-                    android:layout_marginTop="@dimen/margin_8"
-                    android:background="@color/colorBg" />
 
-
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/rv_order"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/tv_repeat_order"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="@dimen/margin_16"
+                    android:text="Repeat Order"
+                    android:textSize="@dimen/text_size_xs"
+                    android:textColor="@color/colorWhite"
+                    android:paddingLeft="@dimen/margin_8"
+                    android:paddingRight="@dimen/margin_8"
+                    android:paddingTop="@dimen/margin_4"
+                    android:paddingBottom="@dimen/margin_4"
+                    android:background="@color/colorOrange"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/divider1"
-                    android:layout_marginTop="@dimen/margin_8"></android.support.v7.widget.RecyclerView>
-                />
+                    android:layout_alignParentRight="true"
+                     />
+
 
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/tv_title3"
+                android:id="@+id/tv_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/rl_cart"
+                android:layout_below="@id/rl_restaurant"
                 android:fontFamily="sans-serif"
                 android:paddingBottom="@dimen/margin_8"
                 android:paddingLeft="@dimen/margin_16"
                 android:paddingRight="@dimen/margin_16"
                 android:paddingTop="@dimen/margin_16"
-                android:text="Bill"
+                android:text="Order Status"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="@dimen/text_size_s" />
+
+
+        <RelativeLayout
+            android:id="@+id/rl_order_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_title"
+            android:background="@color/colorWhite"
+            android:padding="@dimen/margin_16">
+
+
+            <com.shuhart.stepview.StepView
+                android:id="@+id/step_view"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                app:selectedCircleColor="@color/colorPrimary"
+                app:selectedTextColor="@color/colorPrimary"
+                app:stepLineWidth="1dp"
+                app:stepPadding="4dp"
+                app:stepsNumber="3"
+                app:doneTextColor="@color/colorPrimary"
+                app:steps="@array/steps_array"
+                app:nextTextColor="@color/colorSecondaryText"
+                app:nextStepLineColor="@color/colorBg"
+                app:doneCircleColor="@color/colorPrimary"
+                app:doneStepLineColor="@color/colorPrimary"
+                app:doneCircleRadius="12dp"
+                app:selectedCircleRadius="12dp"
+                app:selectedStepNumberColor="@color/colorWhite"
+                app:stepViewStyle="@style/StepView"
+                app:doneStepMarkColor="@color/colorWhite"
+                app:stepNumberTextSize="@dimen/text_size_s"
+                android:typeface="sans"
+                app:animationType="Line"/>
+
+            <TextView
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_below="@id/step_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_message"
+                android:gravity="center_horizontal"
+                android:fontFamily="sans-serif_title"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="@dimen/text_size_xs" />
+
+        </RelativeLayout>
+            <TextView
+                android:id="@+id/tv_title1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_order_status"
+                android:fontFamily="sans-serif"
+                android:paddingBottom="@dimen/margin_8"
+                android:paddingLeft="@dimen/margin_16"
+                android:paddingRight="@dimen/margin_16"
+                android:paddingTop="@dimen/margin_16"
+                android:text="Order Details"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="@dimen/text_size_s" />
+
+
+        <RelativeLayout
+            android:id="@+id/rl_order_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_title1"
+            android:background="@color/colorWhite"
+            android:padding="@dimen/margin_16">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_order_number"
+                android:fontFamily="sans-serif"
+                android:text="Order Id: #123456"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="@dimen/text_size_s" />
+
+            <TextView
+                android:layout_marginTop="@dimen/margin_4"
+                android:layout_below="@id/tv_order_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_date"
+                android:fontFamily="sans-serif_title"
+                android:text="10 Jan 2018, 05:40 PM"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="@dimen/text_size_xs" />
+
+            <TextView
+                android:textStyle="bold"
+                android:gravity="top"
+                android:layout_alignBottom="@id/tv_date"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_order_status"
+                android:fontFamily="sans-serif"
+                android:text="Order Delivered"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_size_s" />
+
+            <View
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_marginBottom="@dimen/margin_8"
+                android:layout_below="@id/tv_date"
+                android:background="@color/colorBg"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:id="@+id/divider1"
+                />
+
+            <TextView
+                 android:layout_below="@id/divider1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_address"
+                android:fontFamily="sans-serif_title"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="@dimen/text_size_xs" />
+
+
+        </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_title2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_order_details"
+                android:fontFamily="sans-serif"
+                android:paddingBottom="@dimen/margin_8"
+                android:paddingLeft="@dimen/margin_16"
+                android:paddingRight="@dimen/margin_16"
+                android:paddingTop="@dimen/margin_16"
+                android:text="Billing Details"
                 android:textColor="@color/colorPrimaryText"
                 android:textSize="@dimen/text_size_s" />
 
@@ -146,11 +283,28 @@
                 android:id="@+id/rl_billing_details"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tv_title3"
+                android:layout_below="@id/tv_title2"
                 android:background="@color/colorWhite"
                 android:padding="@dimen/margin_16">
 
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_order"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                      />
+
+                <View
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:layout_marginBottom="@dimen/margin_8"
+                    android:layout_below="@id/rv_order"
+                    android:background="@color/colorBg"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:id="@+id/divider5"
+                    />
+
                 <TextView
+                    android:layout_below="@id/divider5"
                     android:id="@+id/tv_total_heading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -161,6 +315,7 @@
 
 
                 <TextView
+                    android:layout_below="@id/divider5"
                     android:id="@+id/tv_total"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -255,7 +410,6 @@
 
 
                 <TextView
-                    android:visibility="invisible"
                     android:id="@+id/tv_coupon_heading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -264,11 +418,11 @@
                     android:fontFamily="sans-serif"
                     android:text="Coupon Applied"
                     android:textColor="@color/colorSecondaryText"
-                    android:textSize="@dimen/text_size_xs" />
+                    android:textSize="@dimen/text_size_xs"
+                    />
 
 
                 <TextView
-                    android:visibility="gone"
                     android:id="@+id/tv_coupon_amount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -279,39 +433,22 @@
                     android:text="- 450"
                     android:textColor="@color/colorSecondaryText"
                     android:textSize="@dimen/text_size_xs" />
-                <TextView
-
-                    android:id="@+id/tv_apply_coupon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_below="@id/tv_dicount_heading"
-                    android:paddingTop="@dimen/margin_4"
-                    android:paddingBottom="@dimen/margin_4"
-                    android:fontFamily="sans-serif"
-                    android:text="Apply Coupon"
-                    android:textColor="#FF8A65"
-                    android:textSize="@dimen/text_size_s" />
-
 
                 <TextView
-                    android:visibility="gone"
-                    android:drawablePadding="@dimen/margin_4"
-                    android:drawableRight="@drawable/ic_clear_orange_16"
-                    android:layout_marginLeft="@dimen/margin_8"
                     android:id="@+id/tv_coupon_code"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/tv_coupon_heading"
                     android:layout_below="@id/tv_dicount_heading"
-                    android:paddingTop="@dimen/margin_4"
-                    android:paddingBottom="@dimen/margin_4"
+                    android:layout_marginLeft="@dimen/margin_8"
+                    android:layout_toRightOf="@id/tv_coupon_heading"
                     android:fontFamily="sans-serif"
+                    android:paddingBottom="@dimen/margin_4"
+                    android:paddingTop="@dimen/margin_4"
                     android:text="Tiffin10"
                     android:textAllCaps="true"
-                    android:textColor="#FF8A65"
-                    android:textSize="@dimen/text_size_xs" />
-
+                    android:textColor="@color/colorOrange"
+                    android:textSize="@dimen/text_size_xs"
+                     />
 
 
                 <View
@@ -319,9 +456,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_below="@id/tv_coupon_heading"
-                    android:layout_marginBottom="@dimen/margin_16"
+                    android:layout_marginBottom="@dimen/margin_8"
                     android:layout_marginTop="@dimen/margin_8"
                     android:background="@color/colorBg" />
+
+                <TextView
+                    android:id="@+id/tv_pay_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                   android:layout_below="@id/divider3"
+                    android:fontFamily="sans-serif"
+                    android:text="Total Payabale amount"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/text_size_s" />
+
 
                 <TextView
                     android:id="@+id/tv_pay"
@@ -330,98 +478,27 @@
                     android:layout_alignParentRight="true"
                     android:layout_below="@id/divider3"
                     android:fontFamily="sans-serif"
-                    android:text="To Pay       567"
+                    android:text="567"
                     android:textColor="@color/colorPrimaryText"
                     android:textSize="@dimen/text_size_s" />
 
+                <TextView
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:id="@+id/tv_paid_via"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_pay_title"
+                    android:fontFamily="sans-serif"
+                    android:text="Paid via : Paytm"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_size_s" />
+
+
+
             </RelativeLayout>
-
-            <TextView
-                android:id="@+id/tv_title1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/rl_billing_details"
-                android:fontFamily="sans-serif"
-                android:paddingBottom="@dimen/margin_8"
-                android:paddingLeft="@dimen/margin_16"
-                android:paddingRight="@dimen/margin_16"
-                android:paddingTop="@dimen/margin_16"
-                android:text="Delivery Details"
-                android:textColor="@color/colorPrimaryText"
-                android:textSize="@dimen/text_size_s" />
-
-
-            <TextView
-                android:id="@+id/tv_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_title1"
-                android:background="@color/colorWhite"
-                android:drawableLeft="@drawable/ic_name_grey_16"
-                android:drawablePadding="@dimen/margin_8"
-                android:fontFamily="sans-serif"
-                android:gravity="center_vertical"
-                android:paddingBottom="@dimen/margin_8"
-                android:paddingLeft="@dimen/margin_16"
-                android:paddingRight="@dimen/margin_16"
-                android:paddingTop="@dimen/margin_8"
-                android:text="Abbas Piplodawala"
-                android:textColor="@color/colorSecondaryText"
-                android:textSize="@dimen/text_size_s" />
-
-            <TextView
-                android:id="@+id/tv_number"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_name"
-                android:layout_marginTop="1dp"
-                android:background="@color/colorWhite"
-                android:drawableLeft="@drawable/ic_contact_grey_16"
-                android:drawablePadding="@dimen/margin_8"
-                android:drawableRight="@drawable/ic_right_grey_16"
-                android:fontFamily="sans-serif"
-                android:gravity="center_vertical"
-                android:paddingBottom="@dimen/margin_8"
-                android:paddingLeft="@dimen/margin_16"
-                android:paddingRight="@dimen/margin_16"
-                android:paddingTop="@dimen/margin_8"
-                android:text="9806773421"
-                android:textColor="@color/colorSecondaryText"
-                android:textSize="@dimen/text_size_s" />
-
-            <TextView
-                android:id="@+id/tv_address"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_number"
-                android:layout_marginTop="1dp"
-                android:background="@color/colorWhite"
-                android:drawableLeft="@drawable/ic_location_grey_16"
-                android:drawablePadding="@dimen/margin_8"
-                android:drawableRight="@drawable/ic_right_grey_16"
-                android:fontFamily="sans-serif"
-                android:gravity="center_vertical"
-                android:paddingBottom="@dimen/margin_8"
-                android:paddingLeft="@dimen/margin_16"
-                android:paddingRight="@dimen/margin_16"
-                android:paddingTop="@dimen/margin_8"
-                android:text="Manish nagar, nagpur"
-                android:textColor="@color/colorSecondaryText"
-                android:textSize="@dimen/text_size_s" />
 
         </RelativeLayout>
     </android.support.v4.widget.NestedScrollView>
-
-    <android.support.v7.widget.AppCompatButton
-        android:id="@+id/btn_pay"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/button_height"
-        android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimary"
-        android:text="Proceed To Pay 2000"
-        android:textAllCaps="false"
-        android:textColor="@color/colorWhite"
-        android:textSize="@dimen/text_size" />
 
 
 </RelativeLayout>

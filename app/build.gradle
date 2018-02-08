@@ -60,4 +60,5 @@ dependencies {
     implementation 'com.daimajia.swipelayout:library:1.2.0'
     implementation 'com.github.jkwiecien:EasyImage:2.0.2'
     implementation 'com.theartofdev.edmodo:android-image-cropper:2.3.+'
+    implementation 'com.shuhart.stepview:stepview:1.2.3'
 }

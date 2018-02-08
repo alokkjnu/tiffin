@@ -10,7 +10,7 @@
         android:id="@+id/location_holder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorWhite"
         android:paddingBottom="@dimen/margin_8"
         android:paddingLeft="@dimen/margin_8"
         android:paddingRight="@dimen/margin_16"
@@ -22,9 +22,10 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:padding="@dimen/margin_8"
-            android:src="@drawable/ic_location_white" />
+            android:src="@drawable/ic_location_grey" />
 
         <TextView
+            android:visibility="gone"
             android:textStyle="bold"
             android:id="@+id/tv_credits"
             android:layout_width="wrap_content"
@@ -36,7 +37,7 @@
             android:paddingRight="@dimen/margin_16"
             android:paddingTop="@dimen/margin_8"
             android:text="200"
-            android:textColor="@color/colorWhite"
+            android:textColor="@color/colorSecondaryText"
             android:textSize="@dimen/text_size" />
 
         <TextView
@@ -49,8 +50,8 @@
             android:layout_toRightOf="@id/iv_location"
             android:drawablePadding="@dimen/margin_8"
             android:text="Location"
-            android:textColor="@color/colorWhite"
-            android:textSize="@dimen/text_size"
+            android:textColor="@color/colorSecondaryText"
+            android:textSize="@dimen/text_size_s"
             android:textStyle="bold" />
 
         <TextView
@@ -64,8 +65,8 @@
             android:lines="1"
             android:singleLine="true"
             android:text="Nagpur"
-            android:textColor="@color/colorWhite"
-            android:textSize="@dimen/text_size_s" />
+            android:textColor="@color/colorSecondaryText"
+            android:textSize="@dimen/text_size_xs" />
     </RelativeLayout>
 
     <android.support.v4.widget.NestedScrollView

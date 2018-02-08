@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="@dimen/margin_8" >
+    android:layout_height="wrap_content">
 
     <ImageView
+        android:background="@drawable/bg_green_circle"
         android:id="@+id/iv_icon"
-        android:layout_width="@dimen/drawer_icon_size"
-        android:layout_height="@dimen/drawer_icon_size"
+        android:src="@drawable/ic_location_white"
+        android:padding="@dimen/margin_8"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="@dimen/margin_8"
+        android:layout_marginBottom="@dimen/margin_8"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:paddingRight="@dimen/margin_16" />
+        android:layout_marginLeft="@dimen/margin_16"
+        android:layout_marginRight="@dimen/margin_16" />
 
     <TextView
         android:id="@+id/tv_title"
@@ -18,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_toRightOf="@+id/iv_icon"
-        android:paddingRight="@dimen/margin_8"
+        android:paddingRight="@dimen/margin_16"
         android:text="Item Name"
         android:textSize="@dimen/text_size_s"
         android:textColor="@color/colorSecondaryText"
